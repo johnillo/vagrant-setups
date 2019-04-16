@@ -29,6 +29,9 @@ sudo apt-get install -y libapache2-mod-php7.2 libapache2-mod-fastcgi
 sudo apt-get install -y php7.2-cli php7.2-json php7.2-opcache php7.2-readline php7.2-intl php7.2-xml php7.2-mysql php7.2-fpm php7.2-zip php7.2-gd php7.2-mbstring php-xdebug php-apcu
 # Make, NFS (vagrant)
 sudo apt-get install -y make
+# Configure XDebug to enable remote.
+sudo cp /vagrant/provisioning/apache/20-xdebug.ini \
+    /etc/php/7.2/apache2/conf.d/20-xdebug.ini
 
 # Install Composer (PHP)
 curl -s https://getcomposer.org/installer | php
